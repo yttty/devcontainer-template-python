@@ -1,0 +1,47 @@
+{
+    "name": "Dev Container Python",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--name",
+        "devcontainer-py"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "explicit"
+                    }
+                },
+                "black-formatter.args": [
+                    "--line-length",
+                    "119"
+                ],
+                "isort.args": [
+                    "--profile",
+                    "black",
+                    "--line-length",
+                    "119"
+                ]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.isort",
+                "ms-python.black-formatter",
+                "ms-python.vscode-pylance",
+                "ms-python.debugpy",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.datawrangler",
+                "esbenp.prettier-vscode",
+                "njpwerner.autodocstring",
+                "tamasfe.even-better-toml",
+                "grapecity.gc-excelviewer",
+                "shardulm94.trailing-spaces"
+            ]
+        }
+    }
+}

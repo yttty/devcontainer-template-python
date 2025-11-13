@@ -24,7 +24,7 @@ RUN wget -O gcm-linux_amd64.deb https://github.com/git-ecosystem/git-credential-
 
 # Install poetry
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir poetry
+    pip install --no-cache-dir poetry ipykernel
 
 # Add user
 ARG USER_UID=1000
@@ -33,7 +33,8 @@ ARG USER_NAME=developer
 RUN groupadd --gid $USER_GID $USER_NAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USER_NAME \
     && echo $USER_NAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USER_NAME \
-    && chmod 0440 /etc/sudoers.d/$USER_NAME
+    && chmod 0440 /etc/sudoers.d/$USER_NAME \
+    && chsh -s $(which zsh) $USER_NAME
 
 USER $USER_NAME
 WORKDIR /home/$USER_NAME
