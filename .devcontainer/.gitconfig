@@ -35,7 +35,3 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[credential]
-	helper =
-	helper = /usr/local/bin/git-credential-manager
-	guiPrompt = false # disable GUI

@@ -38,9 +38,9 @@
                 "ms-toolsai.datawrangler",
                 "esbenp.prettier-vscode",
                 "njpwerner.autodocstring",
+                "shardulm94.trailing-spaces",
                 "tamasfe.even-better-toml",
-                "grapecity.gc-excelviewer",
-                "shardulm94.trailing-spaces"
+                "grapecity.gc-excelviewer"
             ]
         }
     }
