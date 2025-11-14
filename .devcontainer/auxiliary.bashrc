@@ -1,19 +1,19 @@
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWSTASHSTATE=1
+# export GIT_PS1_SHOWDIRTYSTATE=1
+# export GIT_PS1_SHOWUNTRACKEDFILES=1
+# export GIT_PS1_SHOWSTASHSTATE=1
 # export GIT_PS1_SHOWUPSTREAM="auto"
 
 __git_status() {
     if git rev-parse --git-dir >/dev/null 2>&1; then
         local git_status=""
         local has_changes=$(git status --porcelain 2>/dev/null)
-        
+
         # if [[ -n "$has_changes" ]]; then
         #     git_status="[x]"  # has changes
         # else
         #     git_status="[o]"  # no changes
         # fi
-        
+
         # Optional: Display different markers depending on the situation
         if [[ -n "$(git status --porcelain --untracked-files=no 2>/dev/null)" ]]; then
             git_status="[x]"  # tracked changes
@@ -22,12 +22,12 @@ __git_status() {
         else
             git_status="[o]"  # totally clean
         fi
-        
+
         echo "$git_status"
     fi
 }
 
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;35m\]$(__git_ps1)\[\033[00m\]\[\033[01;36m\]$(__git_status)\[\033[00m\]\$ '
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;35m\]$(__git_ps1 "(%s)")\[\033[00m\]\[\033[01;36m\]$(__git_status)\[\033[00m\]\$ '
 
 # alias for system utilities
 alias l='ls -lAh'
