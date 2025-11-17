@@ -1,0 +1,44 @@
+{
+    "image": "docker.io/yttty/devcontainer-python:latest",
+    "runArgs": [
+        "--name",
+        "devcontainer-python-changeme"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "explicit"
+                    }
+                },
+                "black-formatter.args": [
+                    "--line-length",
+                    "119"
+                ],
+                "isort.args": [
+                    "--profile",
+                    "black",
+                    "--line-length",
+                    "119"
+                ]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.isort",
+                "ms-python.black-formatter",
+                "ms-python.vscode-pylance",
+                "ms-python.debugpy",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.datawrangler",
+                "esbenp.prettier-vscode",
+                "njpwerner.autodocstring",
+                "shardulm94.trailing-spaces",
+                "tamasfe.even-better-toml",
+                "grapecity.gc-excelviewer"
+            ]
+        }
+    }
+}
