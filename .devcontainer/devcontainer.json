@@ -15,6 +15,11 @@
                     }
                 },
                 "python.defaultInterpreterPath": "/home/coder/.miniconda/envs/dev.env/bin/python",
+                "python.analysis.typeCheckingMode": "standard",
+                "python.analysis.autoFormatStrings": false,
+                "python.analysis.completeFunctionParens": true,
+                "python.analysis.inlayHints.callArgumentNames": "all",
+                "jupyter.askForKernelRestart": false,
                 "black-formatter.args": [
                     "--line-length",
                     "119"
